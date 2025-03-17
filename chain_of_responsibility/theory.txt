@@ -1,0 +1,28 @@
+The Chain of Responsibility (CoR) is a behavioral design pattern that lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
+Key characteristics:
+
+Decouples senders from receivers by giving multiple objects a chance to handle a request
+Promotes loose coupling by eliminating direct connections between request senders and receivers
+Allows dynamic modification of the chain at runtime
+Follows the Single Responsibility and Open/Closed principles
+
+Typical implementation involves:
+
+A handler interface/abstract class with a method to set the next handler
+Concrete handler classes that implement processing logic
+A mechanism to pass requests through the chain
+
+Common real-world examples include:
+
+Logging frameworks where messages cascade through handlers based on severity
+GUI event handling systems where events bubble up through components
+Middleware in web frameworks (like Express.js)
+Exception handling mechanisms
+
+The pattern is most useful when:
+
+Multiple objects can handle a request, but the handler isn't known a priori
+You want to issue a request to one of several objects without specifying the receiver explicitly
+The set of objects that can handle a request should be specified dynamically
+
+While powerful, CoR may lead to unhandled requests if the chain isn't properly configured, and excessive chain length can impact performance.
